@@ -1,0 +1,130 @@
+﻿<Window x:Class="GalaxySim.StarModelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Модель звезды"
+        Width="780"
+        Height="560"
+        MinWidth="680"
+        MinHeight="480"
+        Background="#07090E"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PanelBg" Color="#111827"/>
+        <SolidColorBrush x:Key="BorderSoft" Color="#33475F"/>
+        <SolidColorBrush x:Key="TextMain" Color="#DCE7FF"/>
+        <SolidColorBrush x:Key="TextDim" Color="#9AAFD0"/>
+        <SolidColorBrush x:Key="AccentGreen" Color="#9CF8BF"/>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="230"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,0,12">
+            <TextBlock x:Name="StarNameText"
+                       Foreground="{StaticResource TextMain}"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+            <TextBlock x:Name="StarTypeText"
+                       Foreground="{StaticResource TextDim}"
+                       Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,0,14,0"
+                Background="#05070B"
+                BorderBrush="{StaticResource BorderSoft}"
+                BorderThickness="1"
+                CornerRadius="8"
+                ClipToBounds="True"
+                MouseLeftButtonDown="Viewport_MouseLeftButtonDown"
+                MouseLeftButtonUp="Viewport_MouseLeftButtonUp"
+                MouseMove="Viewport_MouseMove"
+                MouseWheel="Viewport_MouseWheel">
+            <Image x:Name="StarRenderImage"
+                   Stretch="Uniform"
+                   SnapsToDevicePixels="True"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+        </Border>
+
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Background="{StaticResource PanelBg}"
+                BorderBrush="{StaticResource BorderSoft}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="14">
+            <StackPanel>
+                <TextBlock Text="ПАРАМЕТРЫ"
+                           Foreground="{StaticResource TextMain}"
+                           FontSize="13"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="Масштаб"
+                           Foreground="{StaticResource TextDim}"
+                           FontSize="12"/>
+                <Slider x:Name="ZoomSlider"
+                        Minimum="0.65"
+                        Maximum="1.9"
+                        Value="1"
+                        TickFrequency="0.05"
+                        ValueChanged="ViewControl_Changed"/>
+
+                <TextBlock Text="Поворот X"
+                           Foreground="{StaticResource TextDim}"
+                           FontSize="12"
+                           Margin="0,10,0,0"/>
+                <Slider x:Name="RotateXSlider"
+                        Minimum="-80"
+                        Maximum="80"
+                        Value="0"
+                        ValueChanged="ViewControl_Changed"/>
+
+                <TextBlock Text="Поворот Y"
+                           Foreground="{StaticResource TextDim}"
+                           FontSize="12"
+                           Margin="0,10,0,0"/>
+                <Slider x:Name="RotateYSlider"
+                        Minimum="-180"
+                        Maximum="180"
+                        Value="0"
+                        ValueChanged="ViewControl_Changed"/>
+
+                <Button Content="Сбросить вид"
+                        Margin="0,14,0,16"
+                        Padding="8,5"
+                        Click="ResetView_Click"/>
+
+                <TextBlock x:Name="StarDetailsText"
+                           Foreground="{StaticResource TextDim}"
+                           FontFamily="Consolas"
+                           FontSize="12"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Foreground="{StaticResource AccentGreen}"
+                   Margin="0,12,0,0"
+                   Text="Симуляция приостановлена"/>
+
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Content="Закрыть"
+                HorizontalAlignment="Right"
+                Margin="0,12,0,0"
+                Padding="16,6"
+                Click="Close_Click"/>
+    </Grid>
+</Window>
