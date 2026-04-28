@@ -61,7 +61,7 @@
 | Galaxy view | Star card |
 |:---:|:---:|
 | ![Galaxy](docs/screenshots/galaxy.png) | ![Star Card](docs/screenshots/star_card.png) |
-| 1M частиц на пресете Milky Way | Карточка с процедурным именем и параметрами |
+| 128K частиц на пресете Milky Way | Карточка с процедурным именем и параметрами |
 
 | 3D Star renderer | Solar system 2D map |
 |:---:|:---:|
