@@ -85,7 +85,7 @@
 
 ### Сборка
 ```powershell
-git clone https://github.com/yourname/GalaxySim.git
+git clone https://github.com/DocktorCat/GalaxySim.git
 cd GalaxySim
 
 dotnet restore .\GalaxySim.sln
@@ -246,7 +246,7 @@ GalaxySim/
 
 Несколько техник, которые делают эту симуляцию интересной с инженерной точки зрения:
 
-**Barnes–Hut с GPU-LBVH.** Дерево строится через 30-bit Morton codes (Z-order), GPU radix sort за 4 прохода × 8 бит, затем параллельный Karras 2012 алгоритм для топологии BVH. Стэклесс-обход через parent/leftChild/rightChild pointers — без shared memory, которой в ComputeSharp 3.2 нет.
+**Barnes–Hut с GPU-LBVH.** Дерево строится через 30-bit Morton codes (Z-order), GPU radix sort за 4 прохода × 8 бит, затем параллельный Karras 2012 алгоритм для топологии BVH. Обход дерева выполняется через traversal-friendly layout с skip/next pointers, без per-thread global stack. Hot-path данные дерева вынесены отдельно от build/debug-представления. — без shared memory, которой в ComputeSharp 3.2 нет.
 
 **HDR через uint atomic buffers.** ComputeSharp 3.2 не поддерживает HDR pixel formats для `ReadWriteTexture2D`. Решение: три `ReadWriteBuffer<uint>` для R/G/B с накоплением через `Hlsl.InterlockedAdd` и fixed-point scale = 4096. Это даёт значения яркости >1 (нужно для bloom) при сохранении atomic blend.
 
