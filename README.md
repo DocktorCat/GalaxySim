@@ -108,7 +108,7 @@ GalaxySim\bin\Release\net9.0-windows\GalaxySim.exe
 
 - 📦 [Download Galaxy Sim 1.0](https://github.com/DocktorCat/GalaxySim/releases/latest) (Windows 10/11 x64)
 - 🔧 .NET runtime включён, установка не требуется
-- 📊 Размер: ~120 МБ
+- 📊 Размер: ~1 МБ
 
 Просто скачай ZIP, распакуй, запусти GalaxySim.exe.
 
