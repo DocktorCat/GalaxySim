@@ -10,6 +10,8 @@
 [![GPU](https://img.shields.io/badge/GPU-DirectX%2012-76B900)]()
 [![ComputeSharp](https://img.shields.io/badge/ComputeSharp-3.2-blueviolet)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/DocktorCat/GalaxySim)]()
+[![Downloads](https://img.shields.io/github/downloads/DocktorCat/GalaxySim/total)]()
 
 ---
 
@@ -99,16 +101,7 @@ dotnet run --project .\GalaxySim\GalaxySim.csproj -c Release
 ```
 GalaxySim\bin\Release\net9.0-windows\GalaxySim.exe
 ```
-[
 
-![GitHub release](https://img.shields.io/github/v/release/DocktorCat/GalaxySim)
-
-]()
-[
-
-![Downloads](https://img.shields.io/github/downloads/DocktorCat/GalaxySim/total)
-
-]()
 ### Self-contained релиз
 ```powershell
 dotnet publish .\GalaxySim\GalaxySim.csproj -c Release -r win-x64 --self-contained true
