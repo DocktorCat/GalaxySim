@@ -102,6 +102,16 @@ dotnet run --project .\GalaxySim\GalaxySim.csproj -c Release
 GalaxySim\bin\Release\net9.0-windows\GalaxySim.exe
 ```
 
+## 📥 Download
+
+Готовый EXE доступен в [Releases](https://github.com/DocktorCat/GalaxySim/releases/latest):
+
+- 📦 [Download Galaxy Sim 1.0](https://github.com/DocktorCat/GalaxySim/releases/latest) (Windows 10/11 x64)
+- 🔧 .NET runtime включён, установка не требуется
+- 📊 Размер: ~120 МБ
+
+Просто скачай ZIP, распакуй, запусти GalaxySim.exe.
+
 ### Self-contained релиз
 ```powershell
 dotnet publish .\GalaxySim\GalaxySim.csproj -c Release -r win-x64 --self-contained true
