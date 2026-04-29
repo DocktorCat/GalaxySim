@@ -99,7 +99,16 @@ dotnet run --project .\GalaxySim\GalaxySim.csproj -c Release
 ```
 GalaxySim\bin\Release\net9.0-windows\GalaxySim.exe
 ```
+[
 
+![GitHub release](https://img.shields.io/github/v/release/DocktorCat/GalaxySim)
+
+]()
+[
+
+![Downloads](https://img.shields.io/github/downloads/DocktorCat/GalaxySim/total)
+
+]()
 ### Self-contained релиз
 ```powershell
 dotnet publish .\GalaxySim\GalaxySim.csproj -c Release -r win-x64 --self-contained true
